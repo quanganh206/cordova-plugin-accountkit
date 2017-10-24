@@ -28,6 +28,10 @@
   dispatch_async(dispatch_get_main_queue(), ^{
     UIViewController<AKFViewController> *vc = [_accountKit viewControllerForPhoneLoginWithPhoneNumber:preFillPhoneNumber
                                                                                                 state:inputState];
+    vc.uiManager = [[AKFSkinManager alloc]
+                    initWithSkinType: AKFSkinTypeTranslucent
+                    primaryColor: [UIColor colorWithRed:1.00 green:0.52 blue:0.04 alpha:1.0]];
+
     vc.enableSendToFacebook = facebookNotificationsEnabled;
     vc.defaultCountryCode = defaultCountryCode;
     [self _prepareLoginViewController:vc];

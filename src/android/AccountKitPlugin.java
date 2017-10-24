@@ -3,6 +3,7 @@ package org.apache.cordova.facebook;
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
+import android.graphics.Color;
 
 import org.apache.cordova.CallbackContext;
 import org.apache.cordova.CordovaInterface;
@@ -24,6 +25,8 @@ import com.facebook.accountkit.PhoneNumber;
 import com.facebook.accountkit.ui.AccountKitActivity;
 import com.facebook.accountkit.ui.AccountKitConfiguration;
 import com.facebook.accountkit.ui.LoginType;
+import com.facebook.accountkit.ui.UIManager;
+import com.facebook.accountkit.ui.SkinManager;
 
 
 public class AccountKitPlugin extends CordovaPlugin {
@@ -118,6 +121,17 @@ public class AccountKitPlugin extends CordovaPlugin {
         type,
         useAccessToken ? AccountKitActivity.ResponseType.TOKEN : AccountKitActivity.ResponseType.CODE);
 
+    UIManager uiManager;
+    uiManager = new SkinManager(
+      SkinManager.Skin.TRANSLUCENT,
+      Color.parseColor("#FF850B"),
+      Color.parseColor("#FFFFFF"),
+      SkinManager.Tint.WHITE,
+      0.85
+    );
+
+    configurationBuilder.setUIManager(uiManager);
+    
     configurationBuilder.setDefaultCountryCode(options.optString("defaultCountryCode", null));
     configurationBuilder.setFacebookNotificationsEnabled(options.optBoolean("facebookNotificationsEnabled", false));
 
