@@ -124,7 +124,7 @@ public class AccountKitPlugin extends CordovaPlugin {
     UIManager uiManager;
     uiManager = new SkinManager(
       SkinManager.Skin.TRANSLUCENT,
-      Color.parseColor("#FF850B"),
+      Color.parseColor("#2cc42c"),
       Color.parseColor("#FFFFFF"),
       SkinManager.Tint.WHITE,
       0.85
