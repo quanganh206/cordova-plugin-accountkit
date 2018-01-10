@@ -30,7 +30,7 @@
                                                                                                 state:inputState];
     vc.uiManager = [[AKFSkinManager alloc]
                     initWithSkinType: AKFSkinTypeTranslucent
-                    primaryColor: [UIColor colorWithRed:0.17 green:0.77 blue:0.17 alpha:1.0];
+                    primaryColor: [UIColor colorWithRed:0.17 green:0.77 blue:0.17 alpha:1.0]];
 
     vc.enableSendToFacebook = facebookNotificationsEnabled;
     vc.defaultCountryCode = defaultCountryCode;
